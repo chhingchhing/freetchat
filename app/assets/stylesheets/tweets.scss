@@ -1,0 +1,228 @@
+//colors
+$mercury: rgb(229, 229, 229);
+$color_iron_approx: rgb(216, 216, 216);
+$black: rgb(0, 0, 0);
+$black_25: rgba(0, 0, 0, 0.25);
+$color_wild_sand_approx: rgb(245, 245, 245);
+$color_royal_blue_approx: rgb(66, 127, 237);
+$white: rgb(255, 255, 255);
+$color_mountain_mist_approx: rgb(153, 153, 153);
+$color_alto_approx: rgb(217, 217, 217);
+// $black_4.70588: rgba(0, 0, 0, 0.0470588);
+$black_4: rgba(0, 0, 0, 0.0470588);
+
+//fonts
+$font_0: Roboto;
+$font_1: sans-serif;
+
+//urls
+//$url_0: url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+//@extend-elements
+//original selectors
+//.panel-google-plus > .panel-google-plus-tags > ul:hover > li, .panel-google-plus > .panel-google-plus-tags > ul > li:first-child
+%extend_1 {
+	padding: 5px 15px 5px 10px;
+	width: auto;
+	cursor: pointer;
+	margin-left: auto;
+}
+
+
+//@import $url_0;
+body {
+	background-color: $mercury;
+	//padding-top: 60px;
+	padding-bottom: 30px;
+}
+.panel-google-plus {
+	position: relative;
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 0;
+	border: 1px solid $color_iron_approx;
+	font-family: $font_0, $font_1;
+	> {
+		.dropdown {
+			position: absolute;
+			top: 5px;
+			right: 15px;
+			> {
+				.dropdown-menu {
+					left: initial;
+					right: 0;
+					//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+					border-radius: 2px;
+				}
+				span > span {
+					font-size: 10px;
+				}
+			}
+		}
+		.panel-google-plus-tags {
+			position: absolute;
+			top: 35px;
+			right: -3px;
+			> ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				&:hover {
+					//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+					box-shadow: 0 0 3px $black;
+					//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+					box-shadow: 0 0 3px $black_25;
+					> li {
+						@extend %extend_1;
+						background-color: $white;
+					}
+				}
+				> {
+					li {
+						display: block;
+						right: 0;
+						width: 0;
+						padding: 5px 0;
+						background-color: $color_wild_sand_approx;
+						font-size: 12px;
+						overflow: hidden;
+						&:first-child {
+							@extend %extend_1;
+						}
+						&:hover {
+							background-color: $color_royal_blue_approx;
+							color: $white;
+						}
+					}
+					li::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						right: 0;
+						height: 100%;
+						border-right: 3px solid $color_royal_blue_approx;
+					}
+				}
+			}
+		}
+		.panel-heading {
+			background-color: $white;
+			border-width: 0;
+			margin-top: 20px;
+			padding-bottom: 5px;
+			> {
+				img {
+					margin-right: 15px;
+				}
+				h3 {
+					margin: 0;
+					font-size: 14px;
+					font-weight: 700;
+				}
+				h5 {
+					color: $color_mountain_mist_approx;
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+		.panel-footer {
+			background-color: $white;
+			border-width: 0;
+			font-size: 14px;
+			font-weight: 700;
+			min-height: 54px;
+			> {
+				.btn {
+					float: left;
+					margin-right: 8px;
+				}
+				.input-placeholder {
+					display: block;
+					margin-left: 98px;
+					color: $color_mountain_mist_approx;
+					font-size: 12px;
+					font-weight: 400;
+					padding: 8px 6px 7px;
+					border: 1px solid $color_alto_approx;
+					//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+					border-radius: 2px;
+					//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+					box-shadow: $black_4.70588 0 1px 0 0;
+				}
+			}
+		}
+		.panel-body {
+			padding-top: 5px;
+			font-size: 13px;
+			> .panel-google-plus-image {
+				display: block;
+				text-align: center;
+				background-color: $color_wild_sand_approx;
+				border: 1px solid $color_alto_approx;
+				> img {
+					max-width: 100%;
+				}
+			}
+		}
+		.panel-google-plus-comment {
+			display: none;
+			padding: 10px 20px 15px;
+			border-top: 1px solid $mercury;
+			background-color: $color_wild_sand_approx;
+			> .panel-google-plus-textarea {
+				float: right;
+				width: calc(100% - 56px);
+				> {
+					textarea {
+						display: block;
+						width: 100%;
+						background-color: $white;
+						border: 1px solid $color_alto_approx;
+						//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+						box-shadow: $black_4.70588 0 1px 0 0;
+						resize: vertical;
+					}
+					.btn {
+						margin-top: 10px;
+						margin-right: 8px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.btn {
+		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+		border-radius: 3px;
+	}
+	.btn-default {
+		border: 1px solid $color_alto_approx;
+		//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: $black_4.70588 0 1px 0 0;
+		&:hover {
+			background-color: $white;
+			border-color: $black;
+		}
+		&:focus {
+			background-color: $white;
+			border-color: $black;
+		}
+		&:active {
+			background-color: $white;
+			border-color: $black;
+		}
+	}
+	&.panel-google-plus-show-comment > {
+		.panel-google-plus-comment {
+			display: block;
+		}
+		.panel-footer > .input-placeholder {
+			display: none;
+		}
+	}
+}
+@media(min-width: 992px) {
+	.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+		width: auto;
+	}
+}

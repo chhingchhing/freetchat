@@ -1,1 +1,11 @@
-index.html.erb
+<%= render "renders/top_nav" %>
+<%= render "renders/top_cover" %>
+ 
+<div class="container">
+	<div class="col-md-2">Hello 3</div>
+	<div class="col-md-6">
+	<%= render "renders/new_tweet" %>
+	<%= render "renders/tweets" %>
+	</div>
+	<div class="col-md-4">Hello 3</div>
+</div>
